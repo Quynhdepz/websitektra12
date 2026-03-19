@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Background</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="enter">click to enter...</div>
+  <video id="bg-video" loop>
+    <source src="hm/video.mp4" type="video/mp4">
+  </video>
+  <script>
+const enter = document.getElementById("enter");
+const video = document.getElementById("bg-video");
+
+enter.onclick = () => {
+  enter.style.opacity = "0";
+
+  setTimeout(() => {
+    enter.style.display = "none";
+  }, 500);
+
+  video.style.display = "block";
+  video.play();
+};
+</script>
+<div class="center-box">
+  <p class="quote">real eyes, realize, real lies</p>
+<table class="profile"> 
+  <tr>
+    <th> <img src="hm/avt.gif"> </th>
+    <th>    </th>
+    <th> <img src="hm/avt2.gif"></th>
+  </tr>
+  <tr>
+    <td> <h3>M Quỳnh</h3></td>
+    <td style="font-family: 'MyFont'; font-size: 100px; color:rgb(204, 101, 101)"> X </td>
+    <td> <h3>Tấn Phát</h3></td>
+  </tr>
+  </table>
+  <div class="icon">
+    <div class="right">
+    <span><a href="https://www.facebook.com/xmanhquynh/" target="_blank"><img src="hm/facebook_icon (2).png"></a></span>
+    <span><a href="https://www.tiktok.com/@rexsurq" target="_blank" ><img src="hm/tiktokicon (2).png"></a></span>
+    </div>
+    <div class="left"> 
+    <span><a href="https://www.facebook.com/tan.phat.586010" target="_blank"></a><img src="hm/facebook_icon (2).png"></a></span>
+    <span><a href="https://www.tiktok.com/@tnpht687" target="_blank" ><img src="hm/tiktokicon (2).png"></a></span>
+  </div>
+  </div>
+  </div>
+</body>
+</html>
