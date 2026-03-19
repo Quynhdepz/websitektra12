@@ -26,6 +26,7 @@ html, body {
   text-align: center;
   color: white;
   z-index: 1;
+  zoom: 0.3;
 }
 .quote {
   position: fixed;  
@@ -60,6 +61,7 @@ html, body {
     src: url('hm/Starborn.ttf') format('truetype');
 }
 #enter {
+  zoom: 0.3;
   position: fixed;       
   top: 0;
   left: 0;
