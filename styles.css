@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: hidden;
 }
 #bg-video {
   position: fixed;
@@ -12,8 +13,10 @@ html, body {
   display: none;
   object-fit: cover;  
   z-index: -1;
+  pointer-events: none;
 }
 .center-box {
+  display: none;
   position: fixed;  
   top: 55%;
   left: 50%;
