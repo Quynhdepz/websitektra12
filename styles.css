@@ -2,7 +2,6 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
 }
 #bg-video {
   position: fixed;
@@ -13,7 +12,6 @@ html, body {
   display: none;
   object-fit: cover;  
   z-index: -1;
-  pointer-events: none;
 }
 .center-box {
   position: fixed;  
@@ -78,7 +76,7 @@ html, body {
   font-family:  'MyFont2';
   background: rgb(10, 7, 7);  
   cursor: pointer;
-  z-index: 10;
+  z-index: 6;
 }
 @font-face {
    font-family: 'MyFont2';
@@ -109,43 +107,125 @@ html, body {
   display: flex;
   gap: 12px;
 }
-@media (max-width: 768px) {
-  .center-box {
-    width: 85%;
-    padding: 20px 15px;
-    border-radius: 20px;
-  }
-  .quote {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    white-space: normal; 
-  }
-  .profile-item img {
-    width: 65px;
-    height: 65px;
-  }
-  .profile-item h3 {
-    font-size: 0.9rem;
-  }
-  .separator {
-    font-size: 25px;
-    margin: 0 10px;
-  }
-  .social-icons {
-    flex-direction: column; 
-    gap: 15px;
-  }
-  .social-icons .group {
-    justify-content: center;
-    gap: 20px;
-  }
-  .social-icons img {
-    width: 30px; 
-    height: 30px;
-  }
-  #enter {
-    font-size: 1.5rem;
-    padding: 20px;
-    text-align: center;
-  }
+#ask-btn {
+position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(45deg, #050646, #06268086);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(34, 32, 33, 0.4);
+  transition: 0.3s;
+  z-index: 5;
 }
+#ask-btn:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+#chat-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 550px;
+  background: rgba(15, 15, 15, 0.85); 
+  backdrop-filter: blur(15px); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: none; 
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  zoom: 1;
+}
+.chat-header {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 35px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+#messages div {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#messages div:nth-child(odd) {
+  align-self: flex-end;
+  background: #ff4b2b;
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+#messages div:nth-child(even) {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  color: #eee;
+  border-bottom-left-radius: 2px;
+}
+
+
+.chat-input-area {
+  display: flex !important;
+  padding: 12px 12px !important;
+  gap: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  height: 40px;
+} 
+
+#input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 35px !important;
+  padding: 0px 10px;
+  color: white;
+  outline: none;
+  margin: 0 !important;
+}
+
+#send-btn {
+  background: #0b1468;
+  border: none;
+  color: white;
+  padding: 0 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #020091;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#close-btn:hover { color: rgb(0, 81, 233); }
