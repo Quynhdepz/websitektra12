@@ -49,14 +49,14 @@ app.post("/chat", async (req, res) => {
 
     if (data.error) {
       console.error("Lỗi từ OpenAI:", data.error.message);
-      return res.json({ reply: "Do Quỳnh và Phát không đủ kinh phí nên tính năng này không khả dụng." });
+      return res.status(500).json({ reply: "Lỗi: " + data.error.message });
     }
 
     res.json({ reply: data.choices[0].message.content });
 
   } catch (err) {
     console.error("Lỗi hệ thống:", err.message);
-    return res.json({ reply: "Do Quỳnh và Phát không đủ kinh phí nên tính năng này không khả dụng." });
+    res.status(500).json({ reply: "Server gặp sự cố!" });
   }
 });
 
